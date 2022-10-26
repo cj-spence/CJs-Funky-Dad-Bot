@@ -7,7 +7,7 @@ dad_intro = [
     'hi'
 ]
 
-dad_funny_face =[
+dad_funny_face = [
     '彡໒(⊙ᴗ⊙)७彡',
     '(✦ ‿ ✦)',
     '໒(⊙ᴗ⊙)७✎▤',
@@ -22,8 +22,7 @@ dad_funny_face =[
 
 dad_silly = [
     'waddup',
-    'whattup',
-    'whats up'
+    'whattup'
 ]
 
 dad_replies = [
@@ -60,14 +59,14 @@ class CJClient(discord.Client):
         if message.content.split()[0].lower() in dad_silly:
             await message.channel.send(f"The sky, {message.author.mention}!")
         
+        if message.content.split()[0].lower() in dad_replies:
+            changed_message = message.content.replace("im", "hi")   
+            await message.channel.send(f"Well {changed_message}, I'm Dad! {message.author.mention}")
+        
         if words[0] == "thank" and words[1] == "you":
              await message.channel.send(f" No problem, {message.author.mention}.")
         elif message.content.split()[0].lower() in dad_thanks:
             await message.channel.send(f" Of course, {message.author.mention}.")
-        
-        if message.content.split()[0].lower() in dad_replies:
-            changed_message = message.content.replace("im", "hi")   
-            await message.channel.send(f"Well {changed_message}, I'm Dad! {message.author.mention}")
 
 intents = discord.Intents.default()
 intents.message_content = True
