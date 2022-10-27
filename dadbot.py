@@ -13,7 +13,7 @@ bad_words = [
         'dick',
         'slut',
         'whore'
-
+]
 
 dad_intro = [
     'hey',
